@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view locale="tr">
+            <h3 style="margin-top: 0">Form </h3>
+            <p:clock/>
+            <br/>
+             <br/>
+              <br/>
+           
+           
+            <h:form>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Name:"/>
+                <p:inputText value="#{formBean.name}"/>
+                <p:outputLabel value="Surname:"/>
+                <p:inputText value="#{formBean.surname}"/>
+                <p:outputLabel value="E-Mail:"/>
+                <p:inputText type="e-mail" value="#{formBean.email}"/>
+                <p:outputLabel value="Phone Number:"/>
+                <p:inputMask value="#{formBean.phoneNumber}" mask="999/999/99/99"/>
+                <p:outputLabel for="popup-date" value="Birth-Date: " />
+                <p:calendar id="popup-date" value="#{formBean.date}" pattern="dd/MM/yyyy" mask="true" />
+                <p:outputLabel value="Birth-City:"/>
+                <p:selectOneMenu value="#{formBean.city}">
+                    <f:selectItem itemLabel="İstanbul" itemValue="İstanbul"/>
+                    <f:selectItem itemLabel="Konya" itemValue="Konya"/>
+                    <f:selectItem itemLabel="Ankara" itemValue="Ankara"/>
+                    <f:selectItem itemLabel="İzmir" itemValue="İzmir"/>
+                    <f:selectItem itemLabel="Bursa" itemValue="Bursa"/>
+                </p:selectOneMenu>
+            </p:panelGrid>
+                <p:commandButton action="result" value="Gönder"/>
+            </h:form>
+            </f:view>
+      
+    </h:body>
+</html>
+
