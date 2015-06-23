@@ -6,6 +6,8 @@
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -25,9 +27,19 @@ public class FormBean {
     private String surname;
     private String email;
     private String city;
+    private static Map<String,String> cities;
     private Date date;
     private String phoneNumber;
     
+    static {
+        cities = new HashMap<>();
+        cities.put("İstanbul", "İstanbul");
+        cities.put("İzmir", "İzmir");
+        cities.put("Ankara","Ankara");
+        cities.put("Bursa", "Bursa");
+        cities.put("Konya", "Konya");
+        cities.put("Adana", "Adana");
+    }
     
     public String getName(){
         return name;
@@ -66,6 +78,9 @@ public class FormBean {
    public void setCity(String city){
        this.city = city;
    }
-    
+   public Map<String, String> getCities(){
+       return cities;
+   }
+  
     
 }

@@ -26,15 +26,17 @@
                 <p:inputText type="e-mail" value="#{formBean.email}"/>
                 <p:outputLabel value="Phone Number:"/>
                 <p:inputMask value="#{formBean.phoneNumber}" mask="999/999/99/99"/>
-                <p:outputLabel for="popup-date" value="Birth-Date: " />
-                <p:calendar id="popup-date" value="#{formBean.date}" pattern="dd/MM/yyyy" mask="true" />
+                <p:outputLabel for="date" value="Birth-Date: " />
+                <p:calendar id="date" value="#{formBean.date}" locale="tr" navigator="true" pattern="dd/MM/yyyy" />
                 <p:outputLabel value="Birth-City:"/>
                 <p:selectOneMenu value="#{formBean.city}">
-                    <f:selectItem itemLabel="İstanbul" itemValue="İstanbul"/>
+                  <!--  <f:selectItem itemLabel="İstanbul" itemValue="İstanbul"/>
                     <f:selectItem itemLabel="Konya" itemValue="Konya"/>
                     <f:selectItem itemLabel="Ankara" itemValue="Ankara"/>
                     <f:selectItem itemLabel="İzmir" itemValue="İzmir"/>
                     <f:selectItem itemLabel="Bursa" itemValue="Bursa"/>
+                  -->
+                  <f:selectItems value="#{formBean.cities}"/>
                 </p:selectOneMenu>
             </p:panelGrid>
                 <p:commandButton action="result" value="Gönder"/>
